@@ -1,0 +1,56 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Select Calculation"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/btnPvSingle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Present Value Single Amount" />
+
+    <Button
+        android:id="@+id/btnFvSingle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Future Value Single Amount" />
+
+    <Button
+        android:id="@+id/btnPvAnn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Present Value Annuity" />
+
+    <Button
+        android:id="@+id/btnFvAnn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Future Value Annuity" />
+
+    <Button
+        android:id="@+id/btnBonds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bonds" />
+
+    <Button
+        android:id="@+id/btnStocks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stocks" />
+
+    <Button
+        android:id="@+id/btnPerpetuity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perpetuity" />
+
+
+</TableLayout>

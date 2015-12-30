@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BU111 Calculator</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_present_value_single">Present Value Single Amount</string>
+    <string name="title_activity_future_value_single">FutureValueSingle</string>
+    <string name="title_activity_present_value_annuity">PresentValueAnnuity</string>
+
+</resources>

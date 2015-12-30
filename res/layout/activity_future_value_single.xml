@@ -1,0 +1,57 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Future Value Single Amount"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/fvSingGiven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Given Amount"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/fvSingYears"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Years Total"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/fvSingInterest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Interest Rate (decimal)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/fvSingCompPer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="# of Months for Each Compound"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnFvSingCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate" />
+
+    <TextView
+        android:id="@+id/fvSingleAns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</TableLayout>

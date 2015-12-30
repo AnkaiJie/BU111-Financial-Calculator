@@ -1,0 +1,79 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Present Value Annuity"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fill in all but one field. Whichever one left blank will be calculated." />
+
+    <EditText
+        android:id="@+id/pvAnnPMT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Regular Payment Amount"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/pvAnnYears"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Years Total"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/pvAnnInterest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Interest Rate (decimal, i.e. 5% = 0.05)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/pvAnnCompPer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="# of Months for Each Compound"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/pvAnnPayPer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="# of Payments per Year"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/presentValueAnnuity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Present Value of Annuity"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnPvAnnCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate" />
+
+    <TextView
+        android:id="@+id/pvAnnEffRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</TableLayout>
