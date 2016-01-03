@@ -7,5 +7,7 @@
     <string name="title_activity_present_value_single">Present Value Single Amount</string>
     <string name="title_activity_future_value_single">FutureValueSingle</string>
     <string name="title_activity_present_value_annuity">PresentValueAnnuity</string>
+    <string name="title_activity_present_value_hidden">PresentValueHidden</string>
+    <string name="title_activity_future_value_annuity">FutureValueAnnuity</string>
 
 </resources>

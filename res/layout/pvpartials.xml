@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tempTable"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1" >
+
+    <EditText
+        android:id="@+id/presentValueAnnuity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Present Value of Annuity"
+        android:inputType="numberDecimal"
+        android:textColor="#000000"
+        android:textColorHint="#808080"/>
+
+    <EditText
+        android:id="@+id/pvAnnYears"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Years Total"
+        android:inputType="numberDecimal"
+        android:textColor="#000000"
+        android:textColorHint="#808080" />
+
+    <EditText
+        android:id="@+id/pvAnnPMT"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Regular Payment Amount (PMT)"
+        android:inputType="numberDecimal"
+        android:textColor="#000000"
+        android:textColorHint="#808080" />
+
+</TableRow>

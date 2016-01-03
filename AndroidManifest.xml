@@ -34,6 +34,14 @@
             android:name=".PresentValueAnnuity"
             android:label="@string/title_activity_present_value_annuity" >
         </activity>
+        <activity
+            android:name=".PresentValueHidden"
+            android:label="@string/title_activity_present_value_hidden" >
+        </activity>
+        <activity
+            android:name=".FutureValueAnnuity"
+            android:label="@string/title_activity_future_value_annuity" >
+        </activity>
     </application>
 
 </manifest>

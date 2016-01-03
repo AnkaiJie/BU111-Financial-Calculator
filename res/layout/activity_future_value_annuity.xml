@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Present Value Annuity"
+        android:text="Future Value Annuity"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -21,13 +21,13 @@
         android:id="@+id/varSelector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checkedButton="@+id/radioSelectPv" >
+        android:checkedButton="@+id/radioSelectFv" >
 
         <RadioButton
-            android:id="@+id/radioSelectPv"
+            android:id="@+id/radioSelectFv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Present Value" />
+            android:text="Future Value" />
 
         <RadioButton
             android:id="@+id/radioSelectPmt"
@@ -43,7 +43,7 @@
     </RadioGroup>
 
     <EditText
-        android:id="@+id/pvAnnInterest"
+        android:id="@+id/fvAnnInterest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -51,7 +51,7 @@
         android:inputType="numberDecimal" />
 
     <EditText
-        android:id="@+id/pvAnnCompPer"
+        android:id="@+id/fvAnnCompPer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -59,7 +59,7 @@
         android:inputType="numberDecimal" />
 
     <EditText
-        android:id="@+id/pvAnnPayPer"
+        android:id="@+id/fvAnnPayPer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -81,7 +81,7 @@
     </TableRow>
 
     <Button
-        android:id="@+id/btnPvAnnCalc"
+        android:id="@+id/btnFvAnnCalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calculate" />

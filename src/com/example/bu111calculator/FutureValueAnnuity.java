@@ -10,11 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
-import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-public class PresentValueAnnuity extends Activity {
+public class FutureValueAnnuity extends Activity {
 
 	Button btnCalc;
 	EditText interest;
@@ -31,15 +30,15 @@ public class PresentValueAnnuity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_present_value_annuity);
+		setContentView(R.layout.activity_future_value_annuity);
 
-		interest = (EditText) findViewById(R.id.pvAnnInterest);
-		compPeriod = (EditText) findViewById(R.id.pvAnnCompPer);
-		payPeriod = (EditText) findViewById(R.id.pvAnnPayPer);
+		interest = (EditText) findViewById(R.id.fvAnnInterest);
+		compPeriod = (EditText) findViewById(R.id.fvAnnCompPer);
+		payPeriod = (EditText) findViewById(R.id.fvAnnPayPer);
 		finalAnswer = (TextView) findViewById(R.id.finalAnswer);
 		effFinalRate = (TextView) findViewById(R.id.effRate);
 
-		btnCalc = (Button) findViewById(R.id.btnPvAnnCalc);
+		btnCalc = (Button) findViewById(R.id.btnFvAnnCalc);
 		varType = (RadioGroup) findViewById(R.id.varSelector);
 
 		miss1 = (TableRow) findViewById(R.id.missing1);
@@ -47,10 +46,10 @@ public class PresentValueAnnuity extends Activity {
 
 		final LayoutInflater lay = (LayoutInflater) getApplicationContext()
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View v = lay.inflate(R.layout.pvpartials, null);
+		View v = lay.inflate(R.layout.fvpartials, null);
 
-		EditText initialYrs = (EditText) v.findViewById(R.id.pvAnnYears);
-		EditText initialPmt = (EditText) v.findViewById(R.id.pvAnnPMT);
+		EditText initialYrs = (EditText) v.findViewById(R.id.fvAnnYears);
+		EditText initialPmt = (EditText) v.findViewById(R.id.fvAnnPMT);
 		((ViewGroup) initialPmt.getParent()).removeAllViews();
 		miss1.addView(initialPmt);
 		miss2.addView(initialYrs);
@@ -60,16 +59,16 @@ public class PresentValueAnnuity extends Activity {
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-				View v = lay.inflate(R.layout.pvpartials, null);
+				View v = lay.inflate(R.layout.fvpartials, null);
 
-				EditText missingPv = (EditText) v.findViewById(R.id.presentValueAnnuity);
-				EditText missingYrs = (EditText) v.findViewById(R.id.pvAnnYears);
-				EditText missingPmt = (EditText) v.findViewById(R.id.pvAnnPMT);
-				((ViewGroup) missingPv.getParent()).removeAllViews();
+				EditText missingFv = (EditText) v.findViewById(R.id.futureValueAnnuity);
+				EditText missingYrs = (EditText) v.findViewById(R.id.fvAnnYears);
+				EditText missingPmt = (EditText) v.findViewById(R.id.fvAnnPMT);
+				((ViewGroup) missingFv.getParent()).removeAllViews();
 
-				System.out.println(missingPv.getHint().toString());
+				System.out.println(missingFv.getHint().toString());
 
-				if (checkedId == R.id.radioSelectPv) {
+				if (checkedId == R.id.radioSelectFv) {
 					System.out.println("a");
 					miss1.removeAllViews();
 					miss2.removeAllViews();
@@ -80,7 +79,7 @@ public class PresentValueAnnuity extends Activity {
 					System.out.println("b");
 					miss1.removeAllViews();
 					miss2.removeAllViews();
-					miss1.addView(missingPv);
+					miss1.addView(missingFv);
 					miss2.addView(missingYrs);
 					radioTracker = 2;
 				} else {
@@ -88,7 +87,7 @@ public class PresentValueAnnuity extends Activity {
 					miss1.removeAllViews();
 					miss2.removeAllViews();
 					miss1.addView(missingPmt);
-					miss2.addView(missingPv);
+					miss2.addView(missingFv);
 					radioTracker = 3;
 				}
 
@@ -115,26 +114,26 @@ public class PresentValueAnnuity extends Activity {
 				effFinalRate.setText("Effective Regular Rate: " + effRate.toString());
 
 				Double numPmt = 0.0;
-				Double numPv = 0.0;
+				Double numFv = 0.0;
 				Integer numYrs = 0;
 				if (radioTracker == 1 | radioTracker == 0) {
-					numPmt = (Double) parseEditText((EditText) miss1.findViewById(R.id.pvAnnPMT), "double");
-					numYrs = (Integer) parseEditText((EditText) miss2.findViewById(R.id.pvAnnYears), "int");
-					Double pv = numPmt * (1 - Math.pow(1 + effRate, -numYrs * numPayPeriod)) / effRate;
-					System.out.println(pv);
+					numPmt = (Double) parseEditText((EditText) miss1.findViewById(R.id.fvAnnPMT), "double");
+					numYrs = (Integer) parseEditText((EditText) miss2.findViewById(R.id.fvAnnYears), "int");
+					Double fv = numPmt * (Math.pow(1 + effRate, numYrs * numPayPeriod) - 1) / effRate;
+					System.out.println(fv);
 
-					finalAnswer.setText("Present Value: " + pv.toString());
+					finalAnswer.setText("Present Value: " + fv.toString());
 
 				} else if (radioTracker == 2) {
-					numPv = (Double) parseEditText((EditText) miss1.findViewById(R.id.presentValueAnnuity), "double");
-					numYrs = (Integer) parseEditText((EditText) miss2.findViewById(R.id.pvAnnYears), "int");
-					Double pmt = numPv * effRate / (1 - Math.pow(1 + effRate, -numYrs * numPayPeriod));
+					numFv = (Double) parseEditText((EditText) miss1.findViewById(R.id.futureValueAnnuity), "double");
+					numYrs = (Integer) parseEditText((EditText) miss2.findViewById(R.id.fvAnnYears), "int");
+					Double pmt = numFv * effRate / (Math.pow(1 + effRate, numYrs * numPayPeriod) - 1);
 					finalAnswer.setText("Regular Payment Amount: " + pmt.toString());
 
 				} else {
-					numPmt = (Double) parseEditText((EditText) miss1.findViewById(R.id.pvAnnPMT), "double");
-					numPv = (Double) parseEditText((EditText) miss2.findViewById(R.id.presentValueAnnuity), "double");
-					Double yrs = Math.log(1 - numPv * effRate / numPmt) / (-numPayPeriod * Math.log(1 + effRate));
+					numPmt = (Double) parseEditText((EditText) miss1.findViewById(R.id.fvAnnPMT), "double");
+					numFv = (Double) parseEditText((EditText) miss2.findViewById(R.id.futureValueAnnuity), "double");
+					Double yrs = Math.log(numFv * effRate / numPmt + 1) / (numPayPeriod * Math.log(1 + effRate));
 					finalAnswer.setText("Years Total: " + yrs.toString());
 				}
 

@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 	Button btnPvSingle;
 	Button btnFvSingle;
 	Button btnPvAnn;
+	Button btnFvAnn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
 		btnPvSingle = (Button) findViewById(R.id.btnPvSingle);
 		btnFvSingle = (Button) findViewById(R.id.btnFvSingle);
-		btnPvAnn= (Button) findViewById(R.id.btnPvAnn);
-				
+		btnPvAnn = (Button) findViewById(R.id.btnPvAnn);
+		btnFvAnn = (Button) findViewById(R.id.btnFvAnn);
+
 		btnPvSingle.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 				startActivity(intent);
 			}
 		});
-		
+
 		btnFvSingle.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -41,11 +43,19 @@ public class MainActivity extends AppCompatActivity {
 				startActivity(intent);
 			}
 		});
-		
+
 		btnPvAnn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(MainActivity.this, PresentValueAnnuity.class);
+				startActivity(intent);
+			}
+		});
+		
+		btnFvAnn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this, FutureValueAnnuity.class);
 				startActivity(intent);
 			}
 		});
